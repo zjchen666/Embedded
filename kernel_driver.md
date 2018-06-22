@@ -52,3 +52,6 @@ Kernel Non-Preemptive
 中断上下文
 request_irq()
 free_irq()
+
+中断处理机制：
+tasklet, workqueue.
