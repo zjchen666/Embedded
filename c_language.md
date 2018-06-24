@@ -16,3 +16,11 @@ __避免被 Cache!!!__
 
 int a[3][3] = {1,2,3,4,5,6,7,8,9}
 二维数组指针是行指针： 访问元素 *(*(a + 1) + 1)
+
+### constant
+
+const int a; - a为 constant int  
+int const a; - 同上   
+const int *a; - 指针的值为 constant   
+int * const a; - 指针 constant  
+int const * a const; - 指针和值都为constant  
