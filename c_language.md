@@ -31,3 +31,6 @@ unsigned int a = 3;
 int b = -10;   
 a + b > 0  
 原因是b 转换为 uint  
+
+面试题链接：
+http://blog.jobbole.com/109117/
