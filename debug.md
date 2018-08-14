@@ -1,4 +1,4 @@
-## Memory corruption
+## Memory Corruption
 ### Reason:
 - Double Free
 - Array or buffer overflow.
@@ -9,3 +9,5 @@
 ### How to debug:
  - valgrid
  - Set Magic Number.
+
+## Memory Leak
