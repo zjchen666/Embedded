@@ -14,3 +14,5 @@
 ## Memory Leak
  - valgrid
  - malloc_debug/free_debug
+ - top
+ - /proc/meminfo
