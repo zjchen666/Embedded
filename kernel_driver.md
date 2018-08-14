@@ -25,7 +25,7 @@ Kernel Preemptive
 Kernel Non-Preemptive
 
 - 单CPU 非抢占，自旋锁退化为NOP
-- 单CPU 抢占，自旋锁会disable preemptive，不能进行进程调度。否则会死锁 例如：A持有锁 schdule 到B，B访问锁。
+- 单CPU 抢占，自旋锁会disable preemptive和中断，why？ ans：不能进行进程调度。否则会死锁 例如：A持有锁 schdule 到B，B访问锁。
 - 多CPU和单CPU可抢占类似。
 - 自旋锁保护的 critical section 如果同时被ISR访问，要使用
 ### spin Lock
