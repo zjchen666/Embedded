@@ -1,13 +1,15 @@
 ## Memory Corruption
 ### Reason:
-- Double Free
-- Array or buffer overflow.
+- Double Free -> segment fault
+- buffer/heap/stack overflow.
 - Not initialization
 - Dangling Pointer.
 - unaligned data structure
 
 ### How to debug:
- - conveirity
+ - converity
+ - mtrace
+ - trace buffer
  - valgrid
  - Set Magic Number.
 
@@ -16,3 +18,6 @@
  - malloc_debug/free_debug
  - top
  - /proc/meminfo
+ - free
+ - vstate
+ - buddyinfo
