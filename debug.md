@@ -7,6 +7,9 @@
 - unaligned data structure
 
 ### How to debug:
+ - GDB
+ - core dump
+ - back trace
  - converity
  - mtrace
  - trace buffer
