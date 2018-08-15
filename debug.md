@@ -9,6 +9,7 @@
 ### How to debug:
  - GDB
  - core dump
+ - assert()/abort()
  - back trace
  - converity
  - mtrace
