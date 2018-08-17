@@ -25,3 +25,7 @@
  - free
  - vstate
  - buddyinfo
+
+### Crash
+user space: GDB + coredump
+kernel space: kdump + crash
