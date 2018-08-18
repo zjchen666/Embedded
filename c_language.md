@@ -1,4 +1,34 @@
 
+### new、delete、malloc、free
+   new - 调用类的构造函数
+   delete - 调用类的析构函数
+   malloc - 分配内存
+   free  - 释放内存
+   
+### delete与 delete []区别
+    delete - 析构一个元素
+    delete[] - 析构一个元素数组。
+```cpp
+MemTest *mTest1=new MemTest[10];
+
+MemTest *mTest2=new MemTest;
+
+Int *pInt1=new int [10];
+
+Int *pInt2=new int;
+
+delete[]pInt1; 
+
+delete[]pInt2; 
+
+delete[]mTest1;
+
+delete[]mTest2;// - 出错
+
+```
+### 析构和构造函数
+   定义一个对象时先调用基类的构造函数、然后调用派生类的构造函数；析构的时候恰好相反：先调用派生类的析构函数、然后调用基类的析构函数。
+
 ### volatile
 
 volatile 告诉编译器i是随时可能发生变化的，每次使用它的时候必须从i的地址中读取，因而编译器生成的可执行码会重新从i的地址读取数据放在k中。 
