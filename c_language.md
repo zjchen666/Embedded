@@ -26,6 +26,16 @@ delete[]mTest1;
 delete[]mTest2;// - 出错
 
 ```
+
+### 格式化输出：
+```cpp
+Int ("%d"): 32 Bit integer
+Long ("%ld"): 64 bit integer
+Char ("%c"): Character type
+Float ("%f"): 32 bit real value
+Double ("%lf"): 64 bit real value
+```
+
 ### 析构和构造函数
    定义一个对象时先调用基类的构造函数、然后调用派生类的构造函数；析构的时候恰好相反：先调用派生类的析构函数、然后调用基类的析构函数。
 
