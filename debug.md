@@ -18,9 +18,14 @@
  - converity
  - mtrace
    ```cpp
+       1. In code add below:
        #include <mcheck.h>
         void mtrace(void);
         void muntrace(void);
+       2. compile: gcc testmtrace.c -o testmtrace 
+       3. run: ./testmtrace 
+       4. analyize: mtrace testmtrace mytrace.log
+
    ```
  - trace buffer
  - valgrid
