@@ -17,6 +17,11 @@
  - back trace
  - converity
  - mtrace
+   ```cpp
+       #include <mcheck.h>
+        void mtrace(void);
+        void muntrace(void);
+   ```
  - trace buffer
  - valgrid
  - Set Magic Number.
