@@ -19,6 +19,7 @@
 
 ## Memory Leak
  - valgrid
+ - glibc MALLOC_CHECK //export MALLOC_CHECK_=2
  - malloc_debug/free_debug
  - top
  - /proc/meminfo
