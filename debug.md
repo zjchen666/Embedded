@@ -1,3 +1,11 @@
+## IPC communication
+  - file
+  - share memory
+  - pipe
+  - semaphore
+  - messageQueue
+  - socket
+   
 ## Share Lib
    - compile: -shared -fpic
    - nm, objdump, readelf
