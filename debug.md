@@ -1,3 +1,7 @@
+## Share Lib
+   - compile: -shared -fpic
+   - nm, objdump, readelf
+
 ## Memory Corruption
 ### Reason:
 - Double Free -> segment fault
