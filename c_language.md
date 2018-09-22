@@ -1,4 +1,5 @@
 
+###
 ### volatile
 
 volatile 告诉编译器i是随时可能发生变化的，每次使用它的时候必须从i的地址中读取，因而编译器生成的可执行码会重新从i的地址读取数据放在k中。 
@@ -36,3 +37,16 @@ a + b > 0
 面试题链接：
 http://blog.jobbole.com/109117/
 https://blog.csdn.net/sailor_8318/article/details/2215041
+
+### 数据类型的长度
+32bit system
+long - 4 bytes
+long long - 8 bytes
+int - 4 bytes
+double - 8 bytes
+
+64bit system
+long - 8 bytes
+long long - 8 bytes
+int - 8 bytes
+double - 16 bytes
