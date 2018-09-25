@@ -4,7 +4,7 @@
 [Stack](#stack)  
 [Vector](#vector)  
 [pair](#pair)  
-[priority_queue](#priority_queue)
+[priority_queue](#priority_queue)  
 [map](#map)
 
 ## [C++ Class](#class)
