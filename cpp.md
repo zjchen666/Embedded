@@ -5,6 +5,8 @@
 [Vector](#vector)  
 [pair](#pair)  
 [priority_queue](#priority_queue)
+[map](#map)
+
 ## [C++ Class](#class)
 
 ## stl
@@ -170,7 +172,28 @@ int main () {
    // string compare
    string1 > string2
 ```
+### map:
+    有序的 hashmap
+    map<key, val> map;
+    
+    lower_bound(val) (first key >= val)
+    upper_bound(val) (first key > val)
+    
+```cpp
+    map<int, int> m;
+    unordered_map<int, int> a;
 
+    a[1] = 1;
+    m[5] = 50;
+    m[7] = 70;
+
+    cout << m.lower_bound(6)->second << endl; // 70
+    cout << m.upper_bound(6)->second << endl; // 70
+    cout << m.lower_bound(5)->second << endl; // 50
+    cout << m.upper_bound(5)->second << endl; // 70
+    cout << m[6] << endl; // 0
+    cout << a[5] << endl; // 0
+```
 ### queue:
 ```cpp
     queue <int> q
