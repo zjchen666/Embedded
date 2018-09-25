@@ -27,7 +27,9 @@ Kernel Non-Preemptive
 - 单CPU 非抢占，自旋锁退化为NOP
 - 单CPU 抢占，自旋锁会disable preemptive和中断，why？ ans：不能进行进程调度。否则会死锁 例如：A持有锁 schdule 到B，B访问锁。
 - 多CPU和单CPU可抢占类似。
-- 自旋锁保护的 critical section 如果同时被ISR访问，要使用
+- 为什么要使用spinlock？ 
+  spinlock不会睡眠（muxtex，semphore都会）， 如果一块 critical section 同时被ISR访问，要使用spinlock。
+  
 ### spin Lock
 ```cpp
 普通自旋锁：
@@ -37,7 +39,7 @@ Kernel Non-Preemptive
     spin_unlock()
 ```
 
-自旋锁上锁后只能被中断影响，需使用带禁止中断的自旋锁
+自旋锁上锁后只能被中断影响，thread中需使用带禁止中断的自旋锁， ISR中使用spin_lock/spin_unlock.
 ```cpp
     spin_lock_irq()
     spin_unlock_irq()
