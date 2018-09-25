@@ -5,11 +5,28 @@
 module_init(driver_module_init_function);
 module_exit(driver_module_exit_function);
 
-/* register device. after that the drive is appeared in /proc/devices */
-register_chrdrv_region(major_number, DEVICE_NAME, file_ops);
-allocate_chrdrv_region()
-unregister_chrdrv()
+/////////////////////////////////////////
+/* 1. device number <----> device name */
+/////////////////////////////////////////
 
+/* Allocate device number.
+register device. after that the drive is appeared in /proc/devices */
+register_chrdrv_region(dev_t from, unsigned count, const char* name);
+allocate_chrdrv_region(dev_t* dev, unsigned baseminor, unsigned count, const char* name);
+unregister_chrdrv(dev_t from, unsinged count);
+
+///////////////////////////////////////////////
+/*2. device driver <-> device number & name  */
+///////////////////////////////////////////////
+
+/* init charactordevice with driver(file_ops)
+cdec_init(cdev_t, file_ops)
+/* Binding device with device number.*/
+cdev_add( cdev_t, dev_t)
+
+//////////////////////////////////////////////////////////////////////////
+/* 3. device driver <-> device number & name <-> file system node(file) */
+//////////////////////////////////////////////////////////////////////////
 /* create device class */
 register_class()
 
