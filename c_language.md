@@ -56,3 +56,7 @@ https://blog.csdn.net/sailor_8318/article/details/2215041
    | size_t         |   4      |  8    |
    
 需要说明一下的是指针类型存储的是所指向变量的地址，所以32位机器只需要32bit，而64位机器需要64bit。
+
+为什么使用 size_t？
+1. 保证可移植性. 32bit int - 4bytes, 64bit int - 4 bytes. size_t is aligned to address width.
+2. if use uint long, 16 bit machine time complexicity is high.
