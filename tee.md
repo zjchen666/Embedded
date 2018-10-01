@@ -1,7 +1,7 @@
 
 ## OPTEE
 ### QEMU 
-https://www.op-tee.org/docs/qemu/
+https://www.op-tee.org/docs/qemu/  
 Ubuntu 18.04
 
 $ sudo apt-get install android-tools-adb android-tools-fastboot autoconf \
