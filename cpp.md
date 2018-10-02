@@ -4,6 +4,7 @@
 [Stack](#stack)  
 [Vector](#vector)  
 [pair](#pair)  
+[hashmap](#hashmap)  
 [priority_queue](#priority_queue)  
 [map](#map)
 
@@ -140,13 +141,15 @@ int main () {
    Max Heap: priority_queue<int> max_heap;  
    Heap with self defined comparator: priority_queue<int, vector <int>, cmp> heap; //cmp 是第三个参数
 ```
-### unordered_map:
+### hashmap:
 ```cpp
    unordered_map<char, int> map;
    if (map.find(key) != map.end())
 ```
-### unordered_set:
+hash_set:
 ```cpp
+   // 直接用vector初始化
+   unordered_set<string> map(wordDict.begin(), wordDict.end());
    unordered_set<char> set;
    if (set.find(key) != set.end())
    set.insert(val)
