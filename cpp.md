@@ -6,7 +6,8 @@
 [pair](#pair)  
 [hashmap](#hashmap)  
 [priority_queue](#priority_queue)  
-[map](#map)
+[map](#map)  
+[sort](#sort)
 
 ## [C++ Class](#class)
 
