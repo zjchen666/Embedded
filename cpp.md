@@ -40,20 +40,6 @@
 ### swap：  
 swap（x, y）
 
-### sort()   
-sort(a.begin(), a.end());  
-sort(a.rbegin(), a.rend());  
-sort(data.begin(), data.end(), greater< int >());
-   
-### comparator
-```cpp
-struct compare {
-    bool operator()(const ListNode* l, const ListNode* r) {
-        return l->val > r->val; // reversed
-        return l->val < r->val; // not reversed
-    }
-};
-```
 ### iterator
 iterator is a pointer.
 ```cpp
@@ -100,7 +86,22 @@ iterator is a pointer.
    s.top()
 ```
 ### deque:
-### sort:
+
+### sort()   
+sort(a.begin(), a.end());  
+sort(a.rbegin(), a.rend());  
+sort(data.begin(), data.end(), greater< int >());
+   
+### comparator
+__必须严格弱序！！！ x < y / x > y__
+```cpp
+struct compare {
+    bool operator()(const ListNode* l, const ListNode* r) {
+        return l->val > r->val; // reversed
+        return l->val < r->val; // not reversed
+    }
+};
+```
 ```cpp
 // sort algorithm example
 #include <iostream>     // std::cout
