@@ -124,7 +124,13 @@ int main () {
 
   // using object as comp
   std::sort (myvector.begin(), myvector.end(), myobject);     //(12 26 32 33 45 53 71 80)
-
+  
+  // using class as comp
+  std::sort (myvector.begin(), myvector.end(), myclass());     //(12 26 32 33 45 53 71 80)
+  
+  // using lambda 
+  std::sort (myvector.begin(), myvector.end(), [](int a, int b){return a < b;});     //(12 26 32 33 45 53 71 80)
+  
   // print out content:
   std::cout << "myvector contains:";
   for (std::vector<int>::iterator it=myvector.begin(); it!=myvector.end(); ++it)
