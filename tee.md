@@ -18,5 +18,5 @@ $ repo sync
 $ cd build  
 $ make toolchains -j3  
 $ make all run  
-$ make -f qemu.mk run-only
+$ make -f qemu.mk run-only  
 (qemu) c
