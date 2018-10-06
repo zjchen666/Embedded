@@ -1,5 +1,7 @@
 
 ## OPTEE
+https://github.com/OP-TEE  
+
 ### QEMU 
 https://www.op-tee.org/docs/qemu/  
 Ubuntu 18.04
@@ -20,3 +22,15 @@ $ make toolchains -j3
 $ make all run  
 $ make -f qemu.mk run-only  
 (qemu) c
+
+###  Secure Monitor Call (SMC) and Hypervisor Call (HVC)
+
+EL0 - The lowest Exception level. The Exception level that is used to execute user applications,
+in Non-secure state.  
+EL1 - Privileged Exception level. The Exception level that is used to execute operating
+systems, in Non-secure state.  
+EL2 - Hypervisor Exception level. The Exception level that is used to execute hypervisor code.
+EL2 is always in Non-secure state.  
+EL3 - Secure Monitor Exception level. The Exception level that is used to execute Secure
+Monitor code, which handles the transitions between Non-secure and Secure states. EL3
+is always in Secure state.  
