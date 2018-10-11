@@ -1,5 +1,7 @@
 ## [C++ STL](#stl)
-[Misc](#misc)   
+[Misc](#misc)
+   - [lambda](#lambda)   
+
 [String](#string)   
 [Stack](#stack)  
 [Vector](#vector)  
@@ -8,6 +10,7 @@
 [priority_queue](#priority_queue)  
 [map](#map)  
 [sort](#sort)
+
 
 ## [C++ Class](#class)
 
@@ -25,6 +28,13 @@
 | find -> end() | find -> npos|               |       |            |                |               |               |
 
 ### misc
+## lambda
+[capture list] (parameter list) {function body}
+```cpp
+[](int x, int y) {
+   return x + y;
+};
+```
 ### Initialization
 ```cpp
     /* hashmap */
