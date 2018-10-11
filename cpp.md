@@ -28,14 +28,14 @@
 | find -> end() | find -> npos|               |       |            |                |               |               |
 
 ### misc
-## lambda
+#### lambda
 [capture list] (parameter list) {function body}
 ```cpp
 [](int x, int y) {
    return x + y;
 };
 ```
-### Initialization
+#### Initialization
 ```cpp
     /* hashmap */
     unordfered_map<int, int> map = {{1, 2}, {3, 4}, {5, 6}};
@@ -47,10 +47,10 @@
     int m = 2, n = 5;
     vector<vector<int>> vec(m, vector<int> (n, 2));
 ```
-### swap：  
+#### swap：  
 swap（x, y）
 
-### iterator
+#### iterator
 iterator is a pointer.
 ```cpp
         for (string::reverse_iterator it = s.rbegin(); it < s.rend(); it++)
