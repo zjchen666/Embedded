@@ -54,6 +54,10 @@ a + b > 0
 http://blog.jobbole.com/109117/
 https://blog.csdn.net/sailor_8318/article/details/2215041
 
+### 整型溢出
+    short a = -32766, b = -32516;
+    short sum = a + b; // sum = 254 直接加
+    
 ### 数据类型的长度
 
 编译器可以根据自身硬件来选择合适的大小，但是需要满足约束：short和int型至少为16位，long型至少为32位，并且short型长度不能超过int型，而int型不能超过long型。这即是说各个类型的变量长度是由编译器来决定的，而当前主流的编译器中一般是32位机器和64位机器中int型都是4个字节（例如，GCC）。下面列举在GCC编译器下32位机器和64位机器各个类型变量所占字节数：
