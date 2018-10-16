@@ -84,4 +84,7 @@ struct __attribute__((packed)) {
     int *d, e;
     short *f, g;
 } test;
+sizeof(test) : 20 bytes
+w/o attribute packeted: sizeof(test) - 24 bytes
+
 ```
