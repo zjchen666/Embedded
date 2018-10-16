@@ -1,6 +1,7 @@
 ## [C++ STL](#stl)
 [Misc](#misc)
    - [lambda](#lambda)   
+   - [power](#power)
 
 [String](#string)   
 [Stack](#stack)  
@@ -34,6 +35,9 @@
 [](int x, int y) {
    return x + y;
 };
+```
+```cpp
+   1e9  10**9
 ```
 #### Initialization
 ```cpp
