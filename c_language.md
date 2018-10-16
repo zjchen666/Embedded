@@ -76,3 +76,12 @@ https://blog.csdn.net/sailor_8318/article/details/2215041
 为什么使用 size_t？
 1. 保证可移植性. 32bit int - 4bytes, 64bit int - 4 bytes. size_t is aligned to address width.
 2. if use uint long, 16 bit machine time complexicity is high.
+
+### data alignment
+```cpp
+struct __attribute__((packed)) {
+    char a, b, *c;
+    int *d, e;
+    short *f, g;
+} test;
+```
