@@ -60,15 +60,58 @@ int main()
 }
 ```
 2. 生产者消费者问题
-In Thread1:
-pthread_mutex_lock(&m_mutex);   
-pthread_cond_wait(&m_cond,&m_mutex);   
-pthread_mutex_unlock(&m_mutex);  
- 
-In Thread2:
-pthread_mutex_lock(&m_mutex);   
-pthread_cond_signal(&m_cond);   
-pthread_mutex_unlock(&m_mutex);  
+```cpp
+pthread_mutex_t mutux;
+sem_t sem_p;
+sem_t sem_c;
 
+void producer() {
+    if (buff_full) {
+        sem_wait(&sem_p);
+    }
+    pthread_mutex_lock(&mutex);
+    write_data();
+    pthread_mutex_unlock(&mutex);
+    sem_pos(&sem_c);
+}
+ 
+void cunsumer() {
+    if (buff_empty) {
+        sem_wait(&sem_c);
+    }
+    pthread_mutex_lock(&mutex);
+    read_data();
+    pthread_mutex_unlock(&mutex);
+    sem_post(&sem_p);
+}
+```
 
 3. 读者写者问题
+``cpp
+pthread_mutex_t mutex;
+pthread_mutex_t mutex_reader;
+int reader_count = 0;
+
+void writer() {
+    pthread_mutex_lock(&mutex);
+    write();
+    pthread_mutex_unlock(&mutex);
+}
+
+void reader() {
+    pthread_mutex_lock(&mutex_reader);
+    reader_count++;
+    if (reader_count == 1) {
+        pthread_mutex_lock(&mutex);
+    }
+    pthread_mutex_unlock(&mutex_reader);
+    
+    read();
+    
+    pthread_mutex_lock(&mutex_reader);
+    reader_count--;
+    if (reader_count == 0) {
+        pthread_mutex_unlock(&mutex);
+    }
+    pthread_mutex_unlock(&mutex_reader);
+}
