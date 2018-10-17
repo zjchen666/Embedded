@@ -1,4 +1,5 @@
-### two threads 
+### 进程同步
+1. 交替执行
 ```cpp
 #include<stdio.h>
 #include<unistd.h>
@@ -58,3 +59,16 @@ int main()
     return 0;
 }
 ```
+2. 生产者消费者问题
+In Thread1:
+pthread_mutex_lock(&m_mutex);   
+pthread_cond_wait(&m_cond,&m_mutex);   
+pthread_mutex_unlock(&m_mutex);  
+ 
+In Thread2:
+pthread_mutex_lock(&m_mutex);   
+pthread_cond_signal(&m_cond);   
+pthread_mutex_unlock(&m_mutex);  
+
+
+3. 读者写者问题
