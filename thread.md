@@ -87,7 +87,7 @@ void cunsumer() {
 ```
 
 3. 读者写者问题
-``cpp
+```cpp
 pthread_mutex_t mutex;
 pthread_mutex_t mutex_reader;
 int reader_count = 0;
