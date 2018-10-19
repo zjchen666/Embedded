@@ -14,6 +14,51 @@
 
 
 ## [C++ Class](#class)
+## virtual function
+```cpp
+#include <iostream>
+#include <queue>
+
+using namespace std;
+
+class A {
+public: 
+	virtual void foo()
+	{
+		printf("A\n");
+	}
+};
+
+
+class B : public A {
+public: 
+	void foo()
+	{
+		printf("B\n");
+	}
+};
+
+
+class C : public B {
+public: 
+	void foo()
+	{
+		printf("C\n");
+	}
+};
+
+int main()
+{
+   C  c;
+	B  b;
+	//A  a;
+	A* a = &c;
+	a->foo(); // c print instance function
+	//a.foo();
+   //printf("%d\n");	
+   return 0;
+}
+```
 
 ## stl
 | vector        | string      | deque         | stack | queue      | priority_queue | unordered_set | unordered_map |
