@@ -26,6 +26,7 @@ int const a; - 同上
 const int *a; - 指针的值为 constant   
 int * const a; - 指针 constant  
 int const * a const; - 指针和值都为constant  
+int fn(int a, int b) const - cpp 一个类中任何不会修改数据成员的函数都应该声明为const类型。
 
 ### 自动类型转换
 表达式中存在有符号类型和无符号类型时所有的操作数都自动转换为无符号类型   
