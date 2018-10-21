@@ -1,3 +1,5 @@
+本机编译
+```cpp
 obj-m = hello.o
 
 all:
@@ -5,4 +7,7 @@ all:
 
 clean:
 	make -C /lib/modules/$(shell uname -r)/build/ M=$(PWD) clean
+```
+
+toolchain 编译：
 
