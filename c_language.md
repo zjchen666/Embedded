@@ -93,3 +93,24 @@ sizeof(test) : 20 bytes
 w/o attribute packeted: sizeof(test) - 24 bytes
 
 ```
+### void及void指针
+
+void即“无类型”，void *则为“无类型指针”，可以指向任何数据类型。
+
+void指针使用规范
+①void指针可以指向任意类型的数据，亦即可用任意数据类型的指针对void指针赋值。例如：
+int * pint;
+void *pvoid;
+pvoid = pint; /* 不过不能 pint= pvoid; */
+如果要将pvoid赋给其他类型指针，则需要强制类型转换如：pint= (int *)pvoid;
+
+在ANSIC标准中，不允许对void指针进行算术运算如pvoid++或pvoid+=1等，而在GNU中则允许，因为在缺省情况下，GNU认为void *与char *一样。sizeof(*pvoid )== sizeof( char).
+
+void的作用
+①对函数返回的限定。
+②对函数参数的限定。
+当函数不需要返回值时，必须使用void限定。例如： void func(int, int);
+当函数不允许接受参数时，必须使用void限定。例如： int func(void)。
+
+由于void指针可以指向任意类型的数据，亦即可用任意数据类型的指针对void指针赋值，因此还可以用void指针来作为函数形参，这样函数就可以接受任意数据类型的指针作为参数。例如：
+void * memcpy( void *dest, const void *src, size_t len );
