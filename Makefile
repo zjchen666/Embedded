@@ -1,3 +1,4 @@
+
 本机编译
 ```cpp
 obj-m = hello.o
@@ -11,3 +12,11 @@ clean:
 
 toolchain 编译：
 
+
+$(CC)
+$(LD)
+CFLAGS
+KBUILD_EXTRA_SYMBOLS=Modules.sysvers
+obj-m := $(MODULE_NAME).o
+
+make -C $(LINUX) M=$(PWD) modules
