@@ -1,9 +1,9 @@
 
-vundle:
-install:
+### vundle :  
+install:  
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
-install plug in:
+install plugin:  
 :PluginInstall
 
 replace:
