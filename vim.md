@@ -23,3 +23,7 @@ n
 
 new window:  
 :split
+
+file switch:  
+:bn  
+:bp
