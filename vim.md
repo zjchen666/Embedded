@@ -20,3 +20,6 @@ V 选择你要缩进的行数
 文件内变量查找：  
 gd 
 n
+
+new window:
+:split
