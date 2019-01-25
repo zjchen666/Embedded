@@ -11,6 +11,7 @@ git reset --hard # 回退到某一个版本
 git reflog # 查看历史命令，类似与Linux中的history  
 git checkout -- <file> 丢掉当前workspace的改动 - 没有 git add的文件
 git reset HEAD <file>可以把暂存区的修改撤销掉（unstage）已经added的 但没有commit的文件 
+git show COMMIT
   
 ## remote  
 git push branch master  
