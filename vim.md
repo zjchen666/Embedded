@@ -27,3 +27,6 @@ new window:
 file switch:  
 :bn  
 :bp
+
+替换  
+:%s/foo/bar/g
