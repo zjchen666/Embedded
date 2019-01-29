@@ -23,3 +23,7 @@ git checkout <branch> # 切换到指定分支
 git branch <new-branch> # 创建一个新的分支  
 git branch -d <branch> # 删除一个分支  
 git merge <branch> # 将指定的分支合并到当前分支  
+
+## remove  
+git rm -r --cached myFolder # 保留本地  
+git rm -r myFolder # 不保留本地
