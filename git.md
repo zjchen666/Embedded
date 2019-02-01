@@ -28,7 +28,7 @@ git merge <branch> # 将指定的分支合并到当前分支
 git rm -r --cached myFolder # 保留本地  
 git rm -r myFolder # 不保留本地
 
-## add 
-git add -A .来一次添加所有改变的文件。
-git add . 表示添加新文件和编辑过的文件不包括删除的文件; 
-git add -u 表示添加编辑或者删除的文件，不包括新添加的文件
+## add  
+git add -A .来一次添加所有改变的文件  
+git add . 表示添加新文件和编辑过的文件不包括删除的文件  
+git add -u 表示添加编辑或者删除的文件，不包括新添加的文件  
