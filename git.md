@@ -12,7 +12,7 @@ git reflog # 查看历史命令，类似与Linux中的history
 git checkout -- <file> 丢掉当前workspace的改动 - 没有 git add的文件
 git reset HEAD <file>可以把暂存区的修改撤销掉（unstage）已经added的 但没有commit的文件 
 git show COMMIT
-  
+ 
 ## remote  
 git push branch master  
 git pull 从远程抓取分支，使用
@@ -27,3 +27,8 @@ git merge <branch> # 将指定的分支合并到当前分支
 ## remove  
 git rm -r --cached myFolder # 保留本地  
 git rm -r myFolder # 不保留本地
+
+## add 
+git add -A .来一次添加所有改变的文件。
+git add . 表示添加新文件和编辑过的文件不包括删除的文件; 
+git add -u 表示添加编辑或者删除的文件，不包括新添加的文件
