@@ -13,8 +13,9 @@ git reset HEAD <file>可以把暂存区的修改撤销掉（unstage）已经adde
 git show COMMIT
  
 ## diff 
-git diff --cached # 查看 staged 修改    
- 
+git diff --cached # 查看 staged 修改     
+git diff # 查看 local unstaged 修改    
+
 ## remote  
 git push branch master  
 git pull 从远程抓取分支，使用
