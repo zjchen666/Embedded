@@ -5,13 +5,15 @@ git clone url
 git add # 将工作区的修改提交到暂存区  
 git commit # 将暂存区的修改提交到当前分支  
 git status # 查看当前仓库的状态  
-git diff # 查看修改  
 git log # 查看提交历史  
 git reset --hard # 回退到某一个版本  
 git reflog # 查看历史命令，类似与Linux中的history  
 git checkout -- <file> 丢掉当前workspace的改动 - 没有 git add的文件
 git reset HEAD <file>可以把暂存区的修改撤销掉（unstage）已经added的 但没有commit的文件 
 git show COMMIT
+ 
+## diff 
+git diff --cached # 查看 staged 修改    
  
 ## remote  
 git push branch master  
