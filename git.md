@@ -35,3 +35,23 @@ git rm -r myFolder # 不保留本地
 git add -A .来一次添加所有改变的文件  
 git add . 表示添加新文件和编辑过的文件不包括删除的文件  
 git add -u 表示添加编辑或者删除的文件，不包括新添加的文件  
+
+
+
+## gerrit submit
+
+1. After change, you should update your branch first:  
+git fetch  
+git rebase origin/master  
+
+2. Check how many files you changed:  
+git status  
+
+3. add wanted file one by one:  
+git add <wanted file>  
+
+4. Commit your change:  
+git commit -m "to realize the login model"  
+
+5. Push your new code to gerrit for review:  
+git push origin HEAD:refs/for/master  
