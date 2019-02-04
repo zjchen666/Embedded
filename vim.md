@@ -28,9 +28,8 @@ file switch:
 :bn  
 :bp
 
-## show tab and space
-:set list  
-:set listchars=tab:>-,trail:-  
+## show tab and space  
+:set list listchars=tab:>-,trail:-  
 
 ## search and replace  
 :%s/foo/bar/g  
