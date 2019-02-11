@@ -18,7 +18,8 @@ git diff # 查看 local unstaged 修改
 
 ## remote  
 git push branch master  
-git pull 从远程抓取分支，使用
+git pull 从远程抓取分支，使用 . 
+git remote -v 
 
 ## branch  
 git branch # 查看所有本地分支  
