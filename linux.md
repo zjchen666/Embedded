@@ -4,3 +4,6 @@
  _nice与renice_
    1.nice的作用是启动时设置nice的值  
    2.renice的作用是修改已经存在的进程的nice值
+
+## Memory 
+https://zhuanlan.zhihu.com/p/34715622
