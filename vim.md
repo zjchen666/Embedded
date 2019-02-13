@@ -10,6 +10,13 @@ install plugin:
 replace:
 :%s/pld_string/new_string/g
 
+### ctags on MacOS . 
+#you need to get new ctags, i recommend homebrew but anything will work . 
+$ brew install ctags  
+
+#alias ctags if you used homebrew . 
+$ alias ctags="`brew --prefix`/bin/ctags" . 
+
 
 ## Operation:
 
