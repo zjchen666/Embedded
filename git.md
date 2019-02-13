@@ -56,3 +56,7 @@ git commit -m "to realize the login model"
 
 5. Push your new code to gerrit for review:  
 git push origin HEAD:refs/for/master  
+
+## rebase  
+
+https://git-scm.com/book/zh/v2/Git-%E5%B7%A5%E5%85%B7-%E9%87%8D%E5%86%99%E5%8E%86%E5%8F%B2
