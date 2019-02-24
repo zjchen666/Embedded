@@ -64,4 +64,67 @@ external abort来自memory system， 是访问外部memory system产生的异常
 定义一组PE state寄存器SPSR_ELx来保存 PSTATE（NZCV/DAIF/CurrentEL/SPSel等），用于保存PE当前的状态信息  
 没有协处理器概念，系统寄存器带后缀n标志最低的异常访问级别  
 
-https://www.cnblogs.com/smartjourneys/p/6845078.html
+https://www.cnblogs.com/smartjourneys/p/6845078.html  
+3.1 决定Execution State的条件
+SPSR_EL1.M[4] 决定EL0的执行状态，为0 =>64bit ,否则=>32bit
+
+HCR_EL2.RW 决定EL1的执行状态，为1 =>64bit ,否则=>32bit
+
+SCR_EL3.RW确定EL2 or EL1的执行状态，为1 =>64bit ,否则=>32bit
+
+AArch32和AArch64之间的切换只能通过发生异常或者系统Reset来实现.（A32 -> T32之间是通过BX指令切换的）
+
+4. Secure state
+Non-secure
+
+EL0/EL1/EL2, 只能访问Non-secure 物理地址空间
+
+Secure
+
+EL0/EL1/EL3, 可以访问Non-secure 物理地址空间 & Secure 物理地址空间,可起到物理屏障安全隔离作用
+
+4.1 EL3对secure state的影响
+实现EL3
+
+EL3只有secure state;
+Non Secure state到secure state只能发生在EL3接收到异常；
+secure state到non secure state只能发生在异常从EL3返回;
+如果EL2实现，只有non secure state.
+未实现EL3
+
+如果没有实现EL2，则secure state由SOC厂商决定；
+如果实现EL2, 则只有non secure state
+4.2 EL3使用AArch64 or AArch32的影响
+ 
+
+Common
+
+User mode（AArch32才有） 只执行在Non- Secure EL0 or Secure EL0
+
+SCR_EL3.NS决定的是low level EL的secure/non-secure状态，不是决定自身的
+
+EL2只有Non-secure state
+
+EL0 既有Non-secure state 也有Secure state
+
+ 
+
+EL3使用
+
+AArch64
+
+若EL1使用AArch32,那么Non-Secure {SYS/FIQ/IRQ/SVC/ABORT/UND} 模式执行在Non-secure EL1，Secure {SYS/FIQ/IRQ/SVC/ABORT/UND}模式执行在Secure EL1
+
+若 SCR_EL3.NS == 0,则切换到Secure EL0/EL1状态，否则切换到Non-secure EL0/EL1状态
+
+Secure state 有Secure EL0/EL1/EL3
+
+ 
+
+EL3使用
+
+AArch32
+
+若EL1使用AArch32,那么Non- Secure {SYS/FIQ/IRQ/SVC/ABORT/UND} 模式执行在Non-secure EL1，Secure {SYS/FIQ/IRQ/SVC/ABORT/UND}模式执行在EL3
+
+Secure state只有Secure EL0/EL3，没有Secure EL1
