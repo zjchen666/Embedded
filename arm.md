@@ -63,3 +63,5 @@ external abort来自memory system， 是访问外部memory system产生的异常
 提供64bit虚拟地址  
 定义一组PE state寄存器SPSR_ELx来保存 PSTATE（NZCV/DAIF/CurrentEL/SPSel等），用于保存PE当前的状态信息  
 没有协处理器概念，系统寄存器带后缀n标志最低的异常访问级别  
+
+https://www.cnblogs.com/smartjourneys/p/6845078.html
