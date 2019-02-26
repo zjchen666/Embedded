@@ -39,6 +39,7 @@ file switch:
 :set list listchars=tab:>-,trail:-  
 
 ## search and replace  
+% 代表对整个文件有效  
 :%s/foo/bar/g  
 Find each occurrence of 'foo' (in all lines), and replace it with 'bar'.  
 :s/foo/bar/g  
