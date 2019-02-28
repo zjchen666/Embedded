@@ -1,4 +1,4 @@
 # Embedded #
-* [C](/c_language.md) 
 * [ARM](/arm.md)
-* [VIM](/vim.md)
+* [Vim](/vim.md)
+* [Git](/git.md)
