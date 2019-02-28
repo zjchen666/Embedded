@@ -1,4 +1,4 @@
 # Embedded #
-* C
-* Arm
+*  [C](/c_langage.md) 
+* [ARM](/arm.md)
 
