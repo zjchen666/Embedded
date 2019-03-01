@@ -8,8 +8,8 @@ git status # 查看当前仓库的状态
 git log # 查看提交历史  
 git reset --hard # 回退到某一个版本  
 git reflog # 查看历史命令，类似与Linux中的history  
-git checkout -- <file> 丢掉当前workspace的改动 - 没有add到stage的文件  
-git checkout coomit_id <file> revert当前workspace的文件到指定版本
+git checkout -- <file> 丢掉当前workspace的改动 - 没有add到stage的文件   
+git checkout coomit_id <file> revert当前workspace的文件到指定版本  
 git reset HEAD <file>可以把已经added到staged的文件reset  
 git show COMMIT
  
