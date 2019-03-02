@@ -75,3 +75,9 @@ asmlinkage void __arm_smccc_hvc(unsigned long a0, unsigned long a1,
 			struct arm_smccc_res *res, struct arm_smccc_quirk *quirk);
 ```
 
+ The scheme is something like:
+
+Linux schedules in a Linux thread.
+A timer interrupt occurs: from the irq handler of Linux, Linux can schedule out the active thread and schedule in another thread.
+Later on, Linux can schedule back the former Linux thread , on the same cpu or on another cpu.
+When using an optee, the same happens. For each non secure interrupt trapped while TEE is executing, TEE suspends the execution, invokes back the REE into the REE caller Linux thread which is simply asked to return back to TEE: https://github.com/linaro-swg/linux/blob/optee/drivers/tee/optee/rpc.c#L423. If the REE handling of the interrupt schedules out the active Linux thread, then TEE must wait Linux to schedule back the previously active Linux thread so that REE returns to TEE and resume the TEE thread execution.
