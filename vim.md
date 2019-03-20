@@ -60,3 +60,5 @@ This may be wanted after using :set ignorecase to make searches case insensitive
 ## cscope update database
 :!cscope -Rbq  
 :cs reset
+
+显示版本及默认vimrc配置文件加载路径:scriptnames
