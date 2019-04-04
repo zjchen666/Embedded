@@ -28,6 +28,9 @@ git checkout <branch> # 切换到指定分支
 git branch <new-branch> # 创建一个新的分支  
 git branch -d <branch> # 删除一个分支  
 git merge <branch> # 将指定的分支合并到当前分支  
+
+git branch -vv ## 显示 local branch 和 remote branch的 联系
+git branch -b local_branch remote_branch 建立 local branch 和 remote branch 的关系。
  
 ## binding local branch with remote branch
 
