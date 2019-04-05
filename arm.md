@@ -1,3 +1,6 @@
+## SMC Calling Convention
+
+
 ## Performance measure
 Performance Monitors Cycle Count Register(PMCCR)
 
@@ -175,3 +178,6 @@ Secure state只有Secure EL0/EL3，没有Secure EL1
 
 ## 初始化
 为什么要初始化BSS段？
+
+BSS VS COMMON  
+如果初始化的值为0，那么将其保存在bss段，如果没有初始化，则将其保存在common段  
