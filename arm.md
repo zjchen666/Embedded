@@ -128,3 +128,6 @@ AArch32
 若EL1使用AArch32,那么Non- Secure {SYS/FIQ/IRQ/SVC/ABORT/UND} 模式执行在Non-secure EL1，Secure {SYS/FIQ/IRQ/SVC/ABORT/UND}模式执行在EL3
 
 Secure state只有Secure EL0/EL3，没有Secure EL1
+
+
+为什么要初始化BSS段？
