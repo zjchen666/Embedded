@@ -129,5 +129,5 @@ AArch32
 
 Secure state只有Secure EL0/EL3，没有Secure EL1
 
-
+## 初始化
 为什么要初始化BSS段？
