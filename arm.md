@@ -1,3 +1,47 @@
+## Performance measure
+Performance Monitors Cycle Count Register(PMCCR)
+
+```cpp
+// armv7 32bit
+static void get_pmcc(int* ts)
+{
+    int tmp = 0;
+       
+    isb();
+    asm volatile("mrc p15, 0, %0, c9, c13, 0" : "=r"(tmp));
+    *ts = tmp;
+
+    return;
+}
+ 
+// ARMv8
+static inline unsigned int pmcr_counter_enable(void)
+{
+    unsigned int val;
+
+    /* Read Performance Monitors Control Register */
+    __asm__ volatile("mrs %0, pmcr_el0" : "=r" (val));
+    __asm__ volatile("isb");
+    INFO("pmcr: 0x%x \n", val);
+        
+    /* enable cycle counter */
+    __asm__ volatile("msr pmcr_el0, %0" : :"r" (val | 0x00000007));
+    __asm__ volatile("isb");
+    __asm__ volatile("msr PMCNTENSET_EL0, %0" : :"r"(0x80000000));
+    __asm__ volatile("isb");
+
+    return val;
+}
+
+void read_counter()
+{
+    long long ts = 0;
+    isb();
+    __asm__ volatile("mrs %0, PMCCNTR_EL0" : "=r"(ts));
+    INFO("\nCPU Cycle count: %llx, time: %lld ms \n", ts, ts / (1400000));
+}
+```
+
 ## ARMv8 exception level、excution state、secure level 
 
 ### exception level
