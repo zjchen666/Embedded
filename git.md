@@ -82,11 +82,15 @@ git push origin HEAD:refs/for/master
 
 https://git-scm.com/book/zh/v2/Git-%E5%B7%A5%E5%85%B7-%E9%87%8D%E5%86%99%E5%8E%86%E5%8F%B2
 
-## patch  - 解决合并冲突
+## patch  - solve merge conflict between branch and master
 1. git format-patch HEAD^  有几个^就会打几个patch，从最近一次打起  
    以下代码作用同上  
    git format-patch -1 
 2. repo sync  
 3. git am patch——name  
 
-
+## fetch - sync with remote repository
+1. git remote -v : check remote repository
+2. git fetch [remote repository_name] [branch_name]:tmp : checkout remote branch to local tmp branch    
+3. git diff tmp : diff current local branch and tmp branch
+4. git merge tmp: merge [optional]
