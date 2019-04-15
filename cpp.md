@@ -12,6 +12,8 @@
 [map](#map)  
 [sort](#sort)
 
+## 函数重载
+多个函数，函数名相同，但是参数的个数和类型不同。
 
 ## [C++ Class](#class)
 ## virtual function
