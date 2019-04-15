@@ -1,3 +1,20 @@
+
+## 函数重载
+多个函数，函数名相同，但是参数的个数和类型不同。
+
+## 类
+### 对象的引用
+1.对象直接引用 OBJ obj, obj.x  
+2.对象指针 OBJ* pObj; pObj->x  
+3.对象引用 OBJ & obj1 = obj; obj1.x  
+
+### 类的size
+类的size不包括类函数
+
+### 类函数的定义
+1.在定义类的时候。   
+2.在类的内部之声明函数， 在函数外以 类名：：函数名 的形式定义。  
+
 ## [C++ STL](#stl)
 [Misc](#misc)
    - [lambda](#lambda)   
@@ -11,9 +28,6 @@
 [priority_queue](#priority_queue)  
 [map](#map)  
 [sort](#sort)
-
-## 函数重载
-多个函数，函数名相同，但是参数的个数和类型不同。
 
 ## [C++ Class](#class)
 ## virtual function
