@@ -181,3 +181,5 @@ Secure state只有Secure EL0/EL3，没有Secure EL1
 
 BSS VS COMMON  
 如果初始化的值为0，那么将其保存在bss段，如果没有初始化，则将其保存在common段  
+
+## Arm assembly langurage
