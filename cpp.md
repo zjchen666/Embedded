@@ -15,11 +15,14 @@
 1.在定义类的时候。   
 2.在类的内部之声明函数， 在函数外以 类名：：函数名 的形式定义。  
 
+### 类成员变量
+默认是private
+
+
 ## [C++ STL](#stl)
 [Misc](#misc)
    - [lambda](#lambda)   
-   - [power](#power)
-
+   - [power](#power)  
 [String](#string)   
 [Stack](#stack)  
 [Vector](#vector)  
