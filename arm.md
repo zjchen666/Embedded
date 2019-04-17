@@ -182,4 +182,38 @@ Secure state只有Secure EL0/EL3，没有Secure EL1
 BSS VS COMMON  
 如果初始化的值为0，那么将其保存在bss段，如果没有初始化，则将其保存在common段  
 
-## Arm assembly langurage
+## ARM assembly langurage
+### inline assemble
+```cpp
+asm(
+code    /*汇编指令*/
+: output operand list    
+: input operand list      
+: clobber list            
+); 
+
+example 1:
+asm(
+"mov %[result], %[value], ror #1" 
+: [result] "=r" (y) 
+: [value] "r" (x)
+:
+);
+
+example 2:
+asm(
+"mov %0, %1, ror #1" 
+: [result] "=r" (y) 
+: [value] "r" (x)
+:
+);
+```
+
+“r” - 将输入变量放入通用寄存器,即eax,ebx,ecx,edx,esi,edi之一   
+“m” - 内存变量  
+" " - 操作数为内存变量，但寻址方式为自动增量  
+“p” - 操作数是一个合法的内存地址（指针）  
+“g” - 将输入变量放入eax，ebx，ecx，edx之一,或作为内存变量  
+“X” - 操作数可以是任何类型  
+“=” - 操作数在指令中是只写的（输出操作数）   
+“+” - 操作数在指令中是读写类型的（输入输出操作数）   
