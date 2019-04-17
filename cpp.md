@@ -20,9 +20,9 @@
 
 
 ## [C++ STL](#stl)
-[Misc](#misc)
-   - [lambda](#lambda)   
-   - [power](#power)  
+[Misc](#misc)  
+    - [lambda](#lambda)  
+    - [power](#power)  
 [String](#string)   
 [Stack](#stack)  
 [Vector](#vector)  
