@@ -1,3 +1,5 @@
+## 引用  
+主要用于替代指针作为函数参数的作用。
 
 ## 函数重载
 多个函数，函数名相同，但是参数的个数和类型不同。
@@ -90,7 +92,7 @@ int main()
 | back          | back        | back          | N/A   |  back      | N/A            |               |               |
 | size          | size        | size          | size  |  size      | size           |               |               |
 | empty         | empty       | empty         | empty |  empty     | empty          |               |               |
-| find -> end() | find -> npos|               |       |            |                |               |               |
+| find -> end() | find -> npos|               |       |            |            的作用    |               |               |
 
 ### misc
 #### lambda
