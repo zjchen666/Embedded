@@ -226,9 +226,27 @@ asm(
 “=” - 操作数在指令中是只写的（输出操作数）   
 “+” - 操作数在指令中是读写类型的（输入输出操作数）   
 
-### 
-mrs   状态寄存器到通用寄存器
-msr   通用寄存器到状态寄存器
-ldr： 内存到寄存器
-str： 寄存器到内存
-   
+###  汇编命令  
+mrs   状态寄存器到通用寄存器  
+msr   通用寄存器到状态寄存器  
+ldr： 内存到寄存器  
+str： 寄存器到内存  
+
+mov vs ldr  
+Note: “#” for mov, “=” for ldr. To define an immediate value
+o MOV can only move an 8-bit value (0x00->0xff=255) into a register
+while LDR can move a 32-bit value into a register. The immediate value is
+prefixed by different characters in mov and ldr: “#” for mov, “=” for ldr.
+E.g.
+Mov r1,#255 ; ok, 255 is the biggest number you can mov
+Mov r1,255 ; is wrong , missing #
+Mov r1,#256 ; is wrong, the number is bigger than 255
+Mov r1,#0x12340000 ; is wrong, the number is bigger than 255
+
+Ldr r1,=255; you can do this,
+Ldr r1,=256; you can do this,
+Ldr r1,=0x12340000; you can do this,
+o MOV can run faster than LDR.
+o LDR can move a data from a memory address to a register, MOV can only
+i) move data between two registers or ii) save a 8-bit immediate value to a
+register. e.g.
