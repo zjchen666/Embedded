@@ -25,7 +25,7 @@ to avoid obj as parameter(copy constructor costs memory and time)
 3.对象引用 OBJ & obj1 = obj; obj1.x  
 
 ### 类的size
-类的size不包括类函数
+类的size不包括类函数 and statics members
 
 ### 类函数的定义
 1.在定义类的时候。在类内部定义的成员函数默认是inline的   
