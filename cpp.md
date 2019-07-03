@@ -1,5 +1,6 @@
 ## 引用  
 主要用于替代指针作为函数参数的作用。
+to avoid obj as parameter(copy constructor costs memory and time) 
 
 ## 函数重载
 多个函数，函数名相同，但是参数的个数和类型不同。
