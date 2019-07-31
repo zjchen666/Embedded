@@ -38,6 +38,9 @@ file switch:
 ## show tab and space  
 :set list listchars=tab:>-,trail:-  
 
+## 光标跳转  
+Ctrl + O
+Ctrl + I
 ## search and replace  
 % 代表对整个文件有效  
 :%s/foo/bar/g  
