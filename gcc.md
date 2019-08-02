@@ -23,5 +23,5 @@ objdump - disassemble -> dump file
 ld -> Map file   
 ld -> ELF file  
 readelf - get ELF file details  
-nm -> symblo information
+nm -> symblo information  
 addr2line + elf file - get source code position   
