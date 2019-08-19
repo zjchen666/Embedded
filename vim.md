@@ -65,3 +65,9 @@ This may be wanted after using :set ignorecase to make searches case insensitive
 :cs reset
 
 显示版本及默认vimrc配置文件加载路径:scriptnames
+
+## add space into multiple lines
+1. Use Ctrl + V to enter visual block mode.  
+2. Move Up / Down to select the columns of text in the lines you want to comment.  
+3. Then hit Shift + i and type the text you want to insert.  
+4. Then hit Esc , wait 1 second and the inserted text will appear on every line.  
