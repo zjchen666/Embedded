@@ -81,11 +81,12 @@ https://git-scm.com/book/zh/v2/Git-%E5%B7%A5%E5%85%B7-%E9%87%8D%E5%86%99%E5%8E%8
 
 ## Patch  - solve merge conflict between branch and master
 ### 用于已提交的版本
-1. git format-patch HEAD^  有几个^就会打几个patch，从最近一次打起  
+1. Branch: git format-patch HEAD^  有几个^就会打几个patch，从最近一次打起  
    以下代码作用同上  
    git format-patch -1 
 2. repo sync  
-3. git am patch——name  
+3. git am patch patch_name  
+4. commit to master
 ### local change
 
     git diff > patch_name
