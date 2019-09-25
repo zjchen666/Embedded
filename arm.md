@@ -227,7 +227,8 @@ asm(
 “+” - 操作数在指令中是读写类型的（输入输出操作数）   
 跳转时 f表示forward向前，b表示backward向后  
 
-###  汇编命令  
+http://www.ethernut.de/en/documents/arm-inline-asm.html
+
 mrs   状态寄存器到通用寄存器  
 msr   通用寄存器到状态寄存器  
 ldr： 内存到寄存器  
