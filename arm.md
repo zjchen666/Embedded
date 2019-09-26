@@ -234,7 +234,10 @@ msr   通用寄存器到状态寄存器
 ldr： 内存到寄存器  
 str： 寄存器到内存  
 
-mov vs ldr  
+Labels "xb" and "xf", where "x" is a number are a smart extension to the GNU assembly. It branches to the first found label "x" searching "forward" for "f" or "backward" for "b".mov vs ldr  
+
+
+
 Note: “#” for mov, “=” for ldr. To define an immediate value
 o MOV can only move an 8-bit value (0x00->0xff=255) into a register
 while LDR can move a 32-bit value into a register. The immediate value is
