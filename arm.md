@@ -174,8 +174,6 @@ AArch64
 
 Secure state 有Secure EL0/EL1/EL3
 
- 
-
 EL3使用
 
 AArch32
@@ -183,6 +181,28 @@ AArch32
 若EL1使用AArch32,那么Non- Secure {SYS/FIQ/IRQ/SVC/ABORT/UND} 模式执行在Non-secure EL1，Secure {SYS/FIQ/IRQ/SVC/ABORT/UND}模式执行在EL3
 
 Secure state只有Secure EL0/EL3，没有Secure EL1
+
+```cpp
+MSR   SCTLR_EL2, XZR             // Disable MMU at EL2
+
+MOV   X0, XZR
+ORR   X0, X0, #(1 << 10)         // .RW = 0b1  -->  EL2 is AArch64
+ORR   X0, X0, #(1 << 0)          // .NS = 0b1  -->  Non-secure state
+MSR   SCR_EL3, X0
+
+MOV   X0, XZR
+ORR   X0, X0, #(7 << 6)          // .A = .I = .F = 0b1  -->  SErrors, IRQs, and FIQs will all be masked
+ORR   X0, X0, #(0 << 4)          // .M[4] = 0b0  -->  Return to AArch64 state
+ORR   X0, X0, #(1 << 3)          // .M[3:1] = 0b100  -->  Return to EL2
+ORR   X0, X0, #(1 << 0)          // .M[0] = 0b1  -->  Use EL2's dedicated stack pointer
+MSR   SPSR_EL3, X0
+
+ADRP  X0, el2_entry              // Program EL2 entrypoint
+ADD   X0, X0, :lo12:el2_entry
+MSR   ELR_EL3, X0
+
+ERET                             // Perform exception return to EL2
+```
 
 ## 初始化
 为什么要初始化BSS段？
