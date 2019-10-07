@@ -78,3 +78,6 @@ free_irq()
 
 中断处理机制：
 tasklet, workqueue.
+
+## Misc
+ container_of() - 使用结构体成员变量寻找结构体起始地址的macro  
