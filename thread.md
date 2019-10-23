@@ -61,7 +61,7 @@ int main()
     return 0;
 }
 ```
-2. 生产者消费者问题
+2. 生产者消费者问题 - 交替执行
 ```cpp
 pthread_mutex_t mutux;
 sem_t sem_p;
@@ -83,6 +83,51 @@ void cunsumer() {
     pthread_mutex_unlock(&mutex);
     sem_post(&empty);
 }
+```
+应用 Ring buffer
+
+```cpp
+pthread_mutex_t mutux;
+sem_t empty; // 0 - 1 semphore
+sem_t full;  // 0 - 1 semphore
+
+void put(int val) {
+    if ((p_index + 1) % SIZE == c_index) return;
+    buf[p_index] = val;
+    p_index = (p_index + 1) % SIZE;
+}
+
+int get(void) {
+    if (c_index == p_index) return;
+    res = buf[c_index];
+    c_index = (c_index + 1) % SIZE;
+    return res;
+}
+
+void buffer_write(int val) {
+    if (buffer_full()) {
+        sem_wait(&empty);
+    }
+    // mutex 是用来处理 multiple producer和 multiple consumer的情况
+    pthread_mutex_lock(&mutex);
+    put(val);
+    pthread_mutex_unlock(&mutex);
+    sem_pos(&full);
+}
+ 
+int buffer_read(void) {
+    int res;
+    if (buffer_empty()) {
+        sem_wait(&full);
+    }
+    pthread_mutex_lock(&mutex);
+    res = get();
+    pthread_mutex_unlock(&mutex);
+    sem_post(&empty);
+    return res;
+}
+```
+
 ```
 
 3. 读者写者问题
