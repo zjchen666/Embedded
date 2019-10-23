@@ -69,6 +69,7 @@ sem_t sem_c;
 
 void producer() {
     sem_wait(&empty);
+    // mutex 是用来处理多producer和多consumer的情况
     pthread_mutex_lock(&mutex);
     write_data();
     pthread_mutex_unlock(&mutex);
