@@ -68,23 +68,19 @@ sem_t sem_p;
 sem_t sem_c;
 
 void producer() {
-    if (buff_full) {
-        sem_wait(&sem_p);
-    }
+    sem_wait(&empty);
     pthread_mutex_lock(&mutex);
     write_data();
     pthread_mutex_unlock(&mutex);
-    sem_pos(&sem_c);
+    sem_pos(&full);
 }
  
 void cunsumer() {
-    if (buff_empty) {
-        sem_wait(&sem_c);
-    }
+    sem_wait(&full);
     pthread_mutex_lock(&mutex);
     read_data();
     pthread_mutex_unlock(&mutex);
-    sem_post(&sem_p);
+    sem_post(&empty);
 }
 ```
 
