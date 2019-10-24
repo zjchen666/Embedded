@@ -91,17 +91,29 @@ pthread_mutex_t mutux;
 sem_t empty; // 0 - 1 semphore
 sem_t full;  // 0 - 1 semphore
 
-void put(int val) {
-    if ((p_index + 1) % SIZE == c_index) return;
-    buf[p_index] = val;
-    p_index = (p_index + 1) % SIZE;
+typedef struct {
+    void* buffer;
+    int p_index;
+    int c_index;
+    size_t size;
+} ring_buf_t;
+
+int put(ring_buf_t* buf, int val) {
+    if ((buf->p_index + 1) % SIZE >= buf->c_index) {
+        return ERR_BUFFER_FULL;
+    }
+    buf[buf->p_index] = val;
+    buf->p_index = (buf->p_index + 1) % SIZE;
 }
 
-int get(void) {
-    if (c_index == p_index) return;
-    res = buf[c_index];
-    c_index = (c_index + 1) % SIZE;
-    return res;
+int get(ring_buf_t* buf) {
+    int data;
+    if (buf->c_index == buf->p_index) {
+        return ERR_BUFF_EMPTY;
+    }
+    data = buf[buf->c_index];
+    buf->c_index = (buf->c_index + 1) % SIZE;
+    return data;
 }
 
 void buffer_write(int val) {
