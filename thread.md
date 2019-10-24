@@ -93,8 +93,8 @@ sem_t full;  // 0 - 1 semphore
 
 typedef struct {
     void* buffer;
-    int p_index;
-    int c_index;
+    size_t p_index;
+    size_t c_index;
     size_t size;
 } ring_buf_t;
 
