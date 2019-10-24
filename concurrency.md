@@ -1,6 +1,8 @@
-### 进程互斥
 
-### 进程同步
+### semphore, mutex, condition variable and event
+### 进程互斥 mutual exclusive
+
+### 进程同步 Sync 
 1. 交替执行
 ```cpp
 #include<stdio.h>
