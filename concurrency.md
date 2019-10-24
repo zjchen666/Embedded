@@ -1,6 +1,13 @@
 
 ### semphore, mutex, condition variable and event
-
+### DeadLock
+   4 conditions: 
+      - mutual exclusive   Solution: Lock free Hardware
+      - hold and wait      Solution: try lock
+      - no-preemption      Solution: try lock
+      - circle dependency. Solution: Change order
+   
+   
 ### 进程同步 Sync 
 1. 交替执行
 ```cpp
@@ -146,31 +153,31 @@ int buffer_read(void) {
 3. 读者写者问题
 ```cpp
 pthread_mutex_t mutex;
-pthread_mutex_t mutex_reader;
+pthread_mutex_t mutex_w;
 int reader_count = 0;
 
 void writer() {
-    pthread_mutex_lock(&mutex);
+    pthread_mutex_lock(&mutex_w);
     write();
-    pthread_mutex_unlock(&mutex);
+    pthread_mutex_unlock(&mutex_w);
 }
 
 void reader() {
-    pthread_mutex_lock(&mutex_reader);
+    pthread_mutex_lock(&mutex);
     reader_count++;
     if (reader_count == 1) {
-        pthread_mutex_lock(&mutex);
+        pthread_mutex_lock(&mutex_w);
     }
-    pthread_mutex_unlock(&mutex_reader);
+    pthread_mutex_unlock(&mutex);
     
     read();
     
-    pthread_mutex_lock(&mutex_reader);
+    pthread_mutex_lock(&mutex);
     reader_count--;
     if (reader_count == 0) {
-        pthread_mutex_unlock(&mutex);
+        pthread_mutex_unlock(&mutex_w);
     }
-    pthread_mutex_unlock(&mutex_reader);
+    pthread_mutex_unlock(&mutex);
 }
 
 自旋锁(Spin lock)
