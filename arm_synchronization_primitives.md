@@ -1,8 +1,9 @@
 ### Load, store conditional
-LDREX: 
+__LDREX:__   
 loads a word from memory, initializing the state of the exclusive
 monitor(s) to track the synchronization operation. 
-STREX - Performs a conditional store of a word to memory. 
+__STREX:__   
+ Performs a conditional store of a word to memory. 
 ```cpp
    if no update between now and ldrex {
        set value;
@@ -11,10 +12,17 @@ STREX - Performs a conditional store of a word to memory.
        return 1;
    } 
 ```
-CLREX: When an operating system performs a context switch, it must reset the local monitor 
+__CLREX:__ When an operating system performs a context switch, it must reset the local monitor 
 
 local monitor - per CPU
 global monitor - Bus
+
+__WFE:__  
+The wake-up events for WFE are:
+• the execution of an SEV instruction on any processor in a multi-core system
+• an interrupt, unless masked
+• an asynchronous abort, for example a buffered write generating an access fault
+• a debug event, when invasive debug is enabled and permitted in the current state.
 
 __DMB:__  
 • between acquiring a resource, for example through locking a mutex or
