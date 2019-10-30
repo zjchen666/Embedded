@@ -73,3 +73,4 @@ SIGNAL_UPDATE
 BX lr
 ENDP
 ```
+Ref: http://infocenter.arm.com/help/topic/com.arm.doc.dht0008a/DHT0008A_arm_synchronization_primitives.pdf
