@@ -16,6 +16,12 @@ CLREX: When an operating system performs a context switch, it must reset the loc
 local monitor - per CPU
 global monitor - Bus
 
+__DMB:__  
+• between acquiring a resource, for example through locking a mutex or
+decrementing a semaphore, and making any access to that resource.  
+• before making a resource available, for example through unlocking a mutex or
+incrementing a semaphore.  
+
 __Why do we need DMB after lock and before release lock?__  
 You will note the Data Memory Barrier (DMB) instruction that is issued once the lock has been acquired.   
 The DMB guarantees that all memory accesses before the memory barrier will be observed by all of the other CPUs in the 
