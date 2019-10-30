@@ -1,5 +1,4 @@
-load, store conditional
-
+### Load, store conditional
 LDREX: 
 loads a word from memory, initializing the state of the exclusive
 monitor(s) to track the synchronization operation. 
