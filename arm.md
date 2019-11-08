@@ -3,14 +3,18 @@
    2. ARM Cache.
    3. ARM MMU & Page Table
    4. ARM thread
-   
+   5. [ARM SMP boot](/ARM SMP boot)
+
+## ARM SMP boot
+    1. only CPU 0 excute init code.
+    2. other CPUs go to WFI/WFE.
+    3. when CPU0 finishs OS booting, seting PC address for other CPUs and wake up them.
+    
 ## Exception handling
 1. Interrupt(IRQ, FIQ) CPU mode: FIQ, IRQ
 2. Abort (fetch code abort, data abort) CPU mode: abort
 3. Reset CPU mode: supervisor
 4. Exception instruction(SMC, SVC, HVC) CPU mode: superviosr
-
-
 
 ## SMC Calling Convention
 
