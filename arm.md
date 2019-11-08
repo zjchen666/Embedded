@@ -3,9 +3,9 @@
    2. ARM Cache.
    3. ARM MMU & Page Table
    4. ARM thread
-   5. [ARM SMP boot](/ARM SMP boot)
+   5.[ARM SMP boot](#SMP boot)
 
-## ARM SMP boot
+### SMP boot
     1. only CPU 0 excute init code.
     2. other CPUs go to WFI/WFE.
     3. when CPU0 finishs OS booting, seting PC address for other CPUs and wake up them.
