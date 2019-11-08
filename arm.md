@@ -3,7 +3,7 @@
    2. ARM Cache.
    3. ARM MMU & Page Table
    4. ARM thread
-   5.[ARM SMP boot](#SMP boot)
+   5. ARM SMP boot
 
 ### SMP boot
     1. only CPU 0 excute init code.
