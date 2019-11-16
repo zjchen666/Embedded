@@ -1,7 +1,11 @@
 ## ARM OS 相关
    1. ARM synchronization primitives.
    2. ARM Cache.
-   3. ARM MMU & Page Table
+   3. ARM MMU & Page Table  
+      L1 - 1MB/entry, 4096 total,可以指向L2的页表的起始地址 或者 映射1MB物理内存的起始地址（page frame）  
+      L2 - coarse page 和 fine page   
+         coarse页表： 256 entry × 4KB/entry = 1MB。 也可64KB page size - 页表项重复16次  
+         fine页表： 1024 entry × 1KB/entry = 1MB 也可4KB page size - 页表项重复4次  
    4. ARM thread
    5. ARM SMP boot
 
