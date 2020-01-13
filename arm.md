@@ -218,7 +218,7 @@ ERET                             // Perform exception return to EL2
 ```
 
 ## 初始化
-为什么要初始化BSS段？
+为什么要初始化BSS段？因为变量的值为unkonwn
 
 BSS VS COMMON  
 如果初始化的值为0，那么将其保存在bss段，如果没有初始化，则将其保存在common段  
