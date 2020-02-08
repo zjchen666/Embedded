@@ -112,4 +112,13 @@ https://git-scm.com/book/zh/v2/Git-%E5%B7%A5%E5%85%B7-%E9%87%8D%E5%86%99%E5%8E%8
     git diff > patch_name
     patch -p1 < patch_name
 
-
+## Repo
+```
+repo init
+repo sync
+```
+### how to create a branch.
+1. create branch in with gerrit UI.
+2. create a manifest file
+3. do repo init -m manifest file and test it.
+4. commit manifest file.
