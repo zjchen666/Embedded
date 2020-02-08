@@ -1,7 +1,53 @@
-//download from server  
-git clone url
 
-## local  
+remote server ---- clone/fetch -----> repository ---> checkout ---> local
+remote server <---- push ----- repository <--- add & commit --- local
+remote server ------------------- pull -----------------------> local
+
+## Clone 
+git clone url 第一次初始化git
+
+## Fetch
+1. git remote -v : check remote repository
+2. git fetch [remote repository_name] [branch_name]:tmp : checkout remote branch to local tmp branch    
+3. git diff tmp : diff current local branch and tmp branch
+4. git merge tmp: merge [optional]
+
+## Push 
+git push origin HEAD:refs/for/master  
+
+## Checkout
+You need to create a local branch that tracks a remote branch. The following command will create a local branch named daves_branch, tracking the remote branch origin/daves_branch. When you push your changes the remote branch will be updated.
+
+For most recent versions of git:
+
+git checkout --track origin/daves_branch
+--track is shorthand for git checkout -b [branch] [remotename]/[branch] where [remotename] is origin in this case and [branch] is twice the same, daves_branch in this case.
+
+For git 1.5.6.5 you needed this:
+
+git checkout --track -b daves_branch origin/daves_branch
+For git 1.7.2.3 and higher this is enough (might have started earlier but this is the earliest confirmation I could find quickly):
+
+git checkout daves_branch  
+
+## Submit Steps
+1. After change, you should update your branch first:  
+git fetch  
+git rebase origin/master  
+
+2. Check how many files you changed:  
+git status  
+
+3. add wanted file one by one:  
+git add <wanted file>  
+
+4. Commit your change:  
+git commit -m "to realize the login model"  
+
+5. Push your new code to gerrit for review:  
+git push origin HEAD:refs/for/master 
+
+## local command 
 git add # 将工作区的修改提交到暂存区  
 git commit # 将暂存区的修改提交到当前分支  
 git status # 查看当前仓库的状态  
@@ -32,22 +78,6 @@ git merge <branch> # 将指定的分支合并到当前分支
 git branch -vv ## 显示 local branch 和 remote branch的 联系  
 git checkout -b local_branch remote_branch 建立 local branch 和 remote branch 的关系。
  
-## binding local branch with remote branch
-
-You need to create a local branch that tracks a remote branch. The following command will create a local branch named daves_branch, tracking the remote branch origin/daves_branch. When you push your changes the remote branch will be updated.
-
-For most recent versions of git:
-
-git checkout --track origin/daves_branch
---track is shorthand for git checkout -b [branch] [remotename]/[branch] where [remotename] is origin in this case and [branch] is twice the same, daves_branch in this case.
-
-For git 1.5.6.5 you needed this:
-
-git checkout --track -b daves_branch origin/daves_branch
-For git 1.7.2.3 and higher this is enough (might have started earlier but this is the earliest confirmation I could find quickly):
-
-git checkout daves_branch  
-
 ## remove  
 git rm -r --cached myFolder # 保留本地  
 git rm -r myFolder # 不保留本地
@@ -56,24 +86,6 @@ git rm -r myFolder # 不保留本地
 git add -A .来一次添加所有改变的文件  
 git add . 表示添加新文件和编辑过的文件不包括删除的文件  
 git add -u 表示添加编辑或者删除的文件，不包括新添加的文件  
-
-## gerrit submit
-
-1. After change, you should update your branch first:  
-git fetch  
-git rebase origin/master  
-
-2. Check how many files you changed:  
-git status  
-
-3. add wanted file one by one:  
-git add <wanted file>  
-
-4. Commit your change:  
-git commit -m "to realize the login model"  
-
-5. Push your new code to gerrit for review:  
-git push origin HEAD:refs/for/master  
 
 ## Rebase - 用来解决多个pending CL update
 ```
@@ -93,13 +105,9 @@ https://git-scm.com/book/zh/v2/Git-%E5%B7%A5%E5%85%B7-%E9%87%8D%E5%86%99%E5%8E%8
 2. repo sync  
 3. git am patch patch_name  
 4. commit to master
-### local change
 
+### local change
     git diff > patch_name
     patch -p1 < patch_name
 
-## Fetch - sync with remote repository
-1. git remote -v : check remote repository
-2. git fetch [remote repository_name] [branch_name]:tmp : checkout remote branch to local tmp branch    
-3. git diff tmp : diff current local branch and tmp branch
-4. git merge tmp: merge [optional]
+
