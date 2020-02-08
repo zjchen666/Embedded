@@ -118,7 +118,7 @@ repo init
 repo sync
 ```
 ### how to create a branch.
-1. create branch in with gerrit UI.
+1. create branch with gerrit UI.
 2. create a manifest file
 3. do repo init -m manifest file and test it.
 4. commit manifest file.
