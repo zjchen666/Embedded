@@ -1,7 +1,9 @@
 
+```
 remote server ---- clone/fetch -----> repository ---> checkout ---> local
 remote server <---- push ----- repository <--- add & commit --- local
 remote server ------------------- pull -----------------------> local
+```
 
 ## Clone 
 git clone url 第一次初始化git
