@@ -20,17 +20,11 @@ git push origin HEAD:refs/for/master
 ## Checkout
 You need to create a local branch that tracks a remote branch. The following command will create a local branch named daves_branch, tracking the remote branch origin/daves_branch. When you push your changes the remote branch will be updated.
 
-For most recent versions of git:
+git checkout -b [branch] [remotename]/[branch] 
+git branch [branch] [remotename]/[branch]
 
-git checkout --track origin/daves_branch
---track is shorthand for git checkout -b [branch] [remotename]/[branch] where [remotename] is origin in this case and [branch] is twice the same, daves_branch in this case.
-
-For git 1.5.6.5 you needed this:
-
-git checkout --track -b daves_branch origin/daves_branch
-For git 1.7.2.3 and higher this is enough (might have started earlier but this is the earliest confirmation I could find quickly):
-
-git checkout daves_branch  
+## revert
+git checkout commit_id -- file_name
 
 ## Submit Steps
 1. After change, you should update your branch first:  
