@@ -283,8 +283,18 @@ Mov r1,#0x12340000 ; is wrong, the number is bigger than 255
 
 Ldr r1,=255; you can do this,
 Ldr r1,=256; you can do this,
-Ldr r1,=0x12340000; you can do this,
+Ldr r1,=0x12345678; you can do this,
+是把0x12345678这个立即数存到r1中。
+ldr r0, 0x12345678
+是把0x12345678这个地址中的值存放到r0中。
+
 o MOV can run faster than LDR.
 o LDR can move a data from a memory address to a register, MOV can only
 i) move data between two registers or ii) save a 8-bit immediate value to a
 register. e.g.
+
+adr 伪指令：
+  编译源程序时，汇编器首先计算当前PC值（当前指令位置）到exper的距离,然后用一条ADD或者SUB指令替换这条伪指令，
+例如:ADD register,PC,#offset_to_exper。
+
+
