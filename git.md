@@ -59,6 +59,11 @@ git show COMMIT
 git diff --cached # 查看 staged 修改     
 git diff # 查看 local unstaged 修改    
 
+## tag
+git tag -a tag_name [commit id] ;add a tag
+git tag    ;show all the tag
+git show tag; show a tag details
+
 ## remote  
 git push branch master  
 git pull 从远程抓取分支，使用 . 
