@@ -1,0 +1,38 @@
+### SW FI Mitigation:
+1. redundancy check.
+```cpp
+    if (compare(decryption, encryption) == 0) {
+        if (compare(decryption, encryption) != 0) {
+            fail();
+        }
+    } else {
+        fail();
+    }
+```
+
+2. control flow check.
+```cpp
+int check = 0;
+
+check = check + 2;
+sesitive_function1();
+check = check + 3;
+
+check = check + 5;
+sesitive_function1();
+check = check + 7;
+
+if (check == 17) {
+    next_function();
+} else {
+    fail;
+}
+```
+
+3. Time of check time of use (TOCTOU)
+   - check value immediately before using it.
+   - check value every time if it is used more than once.
+
+4. use non-trivial values
+   - True*/False* 3-state decision
+   - SUCCESS - *
