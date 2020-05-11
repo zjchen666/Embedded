@@ -32,7 +32,10 @@ if (check == 17) {
 3. Time of check time of use (TOCTOU)
    - check value immediately before using it.
    - check value every time if it is used more than once.
+   - clean sensitive data(key) after using it.
 
 4. use non-trivial values
    - True*/False* 3-state decision
    - SUCCESS - *
+   
+5. harden memset_s and memcpy_s
