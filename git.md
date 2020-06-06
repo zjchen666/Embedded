@@ -122,3 +122,12 @@ repo sync
 2. create a manifest file
 3. do repo init -m manifest file and test it.
 4. commit manifest file.
+
+### how to solve "gerrit submitted, merge pending solve"?  
+Reason: B has dependence on A. A is abandoned.  
+Solution: 
+git checkout yourbranch (make sure you are on the right branch)  
+git rebase --interactive A^ (will open up your editor)  
+Delete the line showing commit A, save and close  
+git log (confirm that it is what you wanted)  
+git push --force (may need to specify other options depending on how you usually push)  
