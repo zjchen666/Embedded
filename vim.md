@@ -36,7 +36,7 @@ file switch:
 :bp
 
 ## show tab and space  
-:set list listchars=tab:>-,trail:-  
+set list listchars=tab:>-,trail:-  
 
 ## 光标跳转  
 Ctrl + O
