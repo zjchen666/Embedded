@@ -8,5 +8,5 @@ file: Binary data
 # xxd -r -p ./input.txt out.bin
 
 /* Conver binary file into hex string file */
- xxd -plain test.in > test.txt
+ xxd -p test.in > test.txt
 ```
