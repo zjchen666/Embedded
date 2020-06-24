@@ -6,4 +6,7 @@ file: Binary data
 
 /* convert text string into binary data */
 # xxd -r -p ./input.txt out.bin
+
+/* Conver binary file into hex string file */
+ xxd -plain test.in > test.txt
 ```
