@@ -10,3 +10,8 @@ file: Binary data
 /* Conver binary file into hex string file */
  xxd -p test.in > test.txt
 ```
+
+### check RSA pub key
+```
+openssl rsa -in ./data/K0_REE.rsa.pub.pem -noout -text -pubin
+```
