@@ -17,7 +17,7 @@ git clone url 第一次初始化git
 ## fetch and update local branch
 ```
    git fetch remote_branch
-   git checkout --hard HEAD remote_branch
+   git reset --hard HEAD remote_branch
 ```
 ## Push 
 git push origin HEAD:refs/for/master  
