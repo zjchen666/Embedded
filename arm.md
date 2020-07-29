@@ -299,3 +299,9 @@ adr 伪指令：
 
 Post-indexed addressing:Base register is updated after load/store 
 LDR/STR r1 [r2], #4; offset: immediate 4 ;Load/Store to/from memory address in r2, update r2=r2+4 
+
+## PSR
+Z - equal/zero bits
+N - Negtive
+V - overflow
+C - carry on
