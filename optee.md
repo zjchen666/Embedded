@@ -2,7 +2,8 @@
 ## OPTEE
 https://github.com/OP-TEE  
 
-### QEMU 
+## Build:
+### QEMU ARM V7
 https://www.op-tee.org/docs/qemu/  
 Ubuntu 18.04
 
@@ -22,6 +23,20 @@ $ make toolchains -j3
 $ make all run  
 $ make -f qemu.mk run-only  
 (qemu) c
+
+### QEMU ARM V8
+$ sudo apt install python3-pyelftools
+$ sudo apt-get install build-essential python3-dev
+$ pip install pycryptodomex
+
+$ repo init -u https://github.com/OP-TEE/manifest.git -m qemu_v8.xml -b master  
+$ repo sync  
+$ cd build  
+$ make toolchains -j3  
+$ make all run  
+$ make -f qemu.mk run-only  
+(qemu) c
+
 
 ###  Secure Monitor Call (SMC) and Hypervisor Call (HVC)
 
