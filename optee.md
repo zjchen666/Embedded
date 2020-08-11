@@ -25,9 +25,9 @@ $ make -f qemu.mk run-only
 (qemu) c
 
 ### QEMU ARM V8
-$ sudo apt install python3-pyelftools
-$ sudo apt-get install build-essential python3-dev
-$ pip install pycryptodomex
+$ sudo apt install python3-pyelftools  
+$ sudo apt-get install build-essential python3-dev  
+$ pip install pycryptodomex  
 
 $ repo init -u https://github.com/OP-TEE/manifest.git -m qemu_v8.xml -b master  
 $ repo sync  
