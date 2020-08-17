@@ -3,7 +3,7 @@
 https://github.com/OP-TEE  
 
 ## Build:
-### QEMU ARM V7
+### QEMU ARM V7 (no BL31)
 https://www.op-tee.org/docs/qemu/  
 Ubuntu 18.04
 
@@ -37,6 +37,8 @@ $ make all run
 $ make -f qemu_v8.mk run-only  
 (qemu) c
 
+#### rebuild ATF.
+$ make arm-tf DEBUG=1
 
 ###  Secure Monitor Call (SMC) and Hypervisor Call (HVC)
 
