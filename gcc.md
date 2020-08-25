@@ -36,21 +36,22 @@ arm-marvell-eabi-objdump -s -j .data elf_file_name
 ### Use different options when compile source code: 
 Using the #pragma tells the compiler to compile EVERYTHING following with that option, not just a single function. If you want to use the #pragma method, on a single function, you would need to do this:
 
-
+```
 #pragma GCC push_options
 #pragma GCC optimize("O2")
 void myFunc(){
 blah
 }
 #pragma GCC pop_options
-
+```
 
 The other advantage of using the attribute is that you can then define a pre-processor macro:
 
+```
 #define OPTIMIZE(level) __attribute__((optimize(level))
 
 OPTIMIZE("O2") myFunc() ...
 
 OPTIMIZE("O1") yourFunc() ...
-
+```
 It is not possible to put #pragma's into pre-processor macros.
