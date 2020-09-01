@@ -1,5 +1,8 @@
 ## ARM OS 相关
    1. ARM synchronization primitives.
+       spin lock:
+       mutux:
+       semaphore:
    2. ARM Cache.
    3. ARM MMU & Page Table  
       L1 - 1MB/entry, 4096 total,可以指向L2的页表的起始地址 或者 映射1MB物理内存的起始地址（page frame）  
