@@ -1,6 +1,7 @@
 ## ARM OS 相关
    1. ARM synchronization primitives.
-       spin lock:
+       spin lock: 
+        WFI & WFE difference. http://www.wowotech.net/armv8a_arch/wfe_wfi.html  
        mutux:
        semaphore:
    2. ARM Cache.
