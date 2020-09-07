@@ -102,4 +102,4 @@ If the REE handling of the interrupt schedules out the active Linux thread,
 then TEE must wait Linux to schedule back the previously active Linux thread so that REE returns to TEE and resume the TEE thread execution.
 
 
-# Fast SMC & STD SMC
+### Fast SMC & STD SMC
