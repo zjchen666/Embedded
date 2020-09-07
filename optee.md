@@ -100,3 +100,6 @@ When using an optee, the same happens. For each non secure interrupt trapped whi
 https://github.com/linaro-swg/linux/blob/optee/drivers/tee/optee/rpc.c#L423. 
 If the REE handling of the interrupt schedules out the active Linux thread, 
 then TEE must wait Linux to schedule back the previously active Linux thread so that REE returns to TEE and resume the TEE thread execution.
+
+
+# Fast SMC & STD SMC
