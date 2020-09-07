@@ -102,4 +102,9 @@ If the REE handling of the interrupt schedules out the active Linux thread,
 then TEE must wait Linux to schedule back the previously active Linux thread so that REE returns to TEE and resume the TEE thread execution.
 
 
-### Fast SMC & STD SMC
+### SMC Fast Call and Yielding Call
+• Fast Calls execute atomic operations. The call appears to be atomic from the perspective of the calling
+PE, and returns when the requested operation has completed.  
+• Yielding Calls start operations that can be pre-empted by a Non-secure interrupt. The call can return
+before the requested operation has completed. Appendix A: Example implementation of Yielding Service
+calls provides an example of handling Yielding Calls.  
