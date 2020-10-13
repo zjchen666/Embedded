@@ -8,11 +8,12 @@ remote server ------------------- pull -----------------------> local
 ## Clone 
 git clone url 第一次初始化git
 
-## Fetch
-1. git remote -v : check remote repository
-2. git fetch [remote repository_name] [branch_name]:tmp : checkout remote branch to local tmp branch    
-3. git diff tmp : diff current local branch and tmp branch
-4. git merge tmp: merge [optional]
+## Fetch  
+1. git remote -v : check remote repository  
+2. git fetch [remote repository_name] [branch_name]:tmp : checkout remote branch to local tmp branch      
+3. git diff tmp : diff current local branch and tmp branch  
+4. git merge tmp: merge [optional]  
+5. git fetch origin && git reset --hard origin/master && git clean -f -d  
 
 ## fetch and update local branch
 ```
