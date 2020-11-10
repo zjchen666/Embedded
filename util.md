@@ -10,3 +10,9 @@ cat file1.txt >> file3.txt   // append to end of file3.txt   |file3|file1|
    this is file2
    this is file3
 ```
+### DD
+```
+  /* Enlarge file */
+  
+ dd if=/dev/zero of=./gen3_uboot.bin.usb bs=1 count=1 seek=819199
+```
