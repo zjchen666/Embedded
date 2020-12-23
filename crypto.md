@@ -20,3 +20,8 @@ openssl rsa -in ./data/K0_REE.rsa.pub.pem -noout -text -pubin
 ```
 openssl dgst -sha256 -sign sign_key.rsa.priv.pem -out signature.bin data.bin
 ```
+
+### SHA256
+```
+openssl dgst -sha256 data.bin
+```
