@@ -85,7 +85,12 @@ git merge <branch> # 将指定的分支合并到当前分支
 
 git branch -vv ## 显示 local branch 和 remote branch的 联系  
 git checkout -b local_branch remote_branch 建立 local branch 和 remote branch 的关系。
- 
+
+Another way to set remote tracking on a branch is to simply use the git branch -u option. Running  
+git branch -u o/main foo    
+will set the foo branch to track o/main. If foo is currently checked out you can even leave it off:  
+git branch -u o/main  
+
 ## remove  
 git rm -r --cached myFolder # 保留本地  
 git rm -r myFolder # 不保留本地
