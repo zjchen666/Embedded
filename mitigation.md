@@ -38,4 +38,5 @@ if (check == 17) {
    - True*/False* 3-state decision
    - SUCCESS - *
    
-5. harden memset_s and memcpy_s
+5. Harden memset_s and memcpy_s constant time  
+6. Integer overflow.  
