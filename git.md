@@ -106,6 +106,11 @@ git add -u 表示添加编辑或者删除的文件，不包括新添加的文件
    change the CL to 'edit'
    git commit --amend
    git rebase --continue
+   
+   /* Binary rebase */
+   #at the branch you want to rebase into "master > mybranch"
+   git rebase -s recursive -X theirs master
+
 ```
 
 https://git-scm.com/book/zh/v2/Git-%E5%B7%A5%E5%85%B7-%E9%87%8D%E5%86%99%E5%8E%86%E5%8F%B2
