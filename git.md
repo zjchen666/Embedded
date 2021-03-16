@@ -32,6 +32,8 @@ git branch [branch] [remotename]/[branch]
 ## revert
 git checkout commit_id -- file_name
 
+## Cherry-pick for binary files
+ git cherry-pick --strategy=recursive -X theirs commit_id
 ## Submit Steps
 1. After change, you should update your branch first:  
 git fetch  
