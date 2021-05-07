@@ -3,9 +3,28 @@
 ### vundle :  
 install:  
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-
+```
 install plugin:  
 :PluginInstall
+
+" 你在此设置运行时路径
+set rtp+=~/.vim/bundle/Vundle.vim
+
+call vundle#begin()
+
+" 在这里面输入安装的插件
+Plugin 'gmarik/Vundle.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'kien/ctrlp.vim'
+Plugin 'taglist.vim'
+
+"所有插件都应该在这一行之前
+call vundle#end()
+
+" filetype off
+filetype plugin indent on
+
+```
 
 replace:
 :%s/pld_string/new_string/g
