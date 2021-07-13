@@ -150,3 +150,7 @@ git rebase --interactive A^ (will open up your editor)
 Delete the line showing commit A, save and close  
 git log (confirm that it is what you wanted)  
 git push --force (may need to specify other options depending on how you usually push)  
+
+                          
+### customization
+ sync =!git fetch origin && git reset --hard origin/dev_branch/master
