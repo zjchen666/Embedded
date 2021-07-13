@@ -153,4 +153,5 @@ git push --force (may need to specify other options depending on how you usually
 
                           
 ### customization
+__Sync__
  sync =!git fetch origin && git reset --hard origin/dev_branch/master
