@@ -8,6 +8,8 @@
     } else {
         fail();
     }
+    
+    // security check
 ```
 
 2. control flow check.
@@ -40,3 +42,4 @@ if (check == 17) {
    
 5. Harden memset_s and memcpy_s constant time  
 6. Integer overflow.  
+7. stack protection.
