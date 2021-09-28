@@ -4,6 +4,8 @@ remote server ---- clone/fetch -----> repository ---> checkout ---> local
 remote server <---- push ----- repository <--- add & commit --- local
 remote server ------------------- pull -----------------------> local
 ```
+## Config
+git config --global core.editor "vim"
 
 ## Clone 
 git clone url 第一次初始化git
