@@ -17,11 +17,18 @@ git clone url 第一次初始化git
 4. git merge tmp: merge [optional]  
 5. git fetch origin && git reset --hard origin/master && git clean -f -d  
 
-## fetch and update local branch
+## fetch and overwrite local branch
 ```
    git fetch remote_branch
    git reset --hard HEAD remote_branch
 ```
+## fetch and rebase local branch onto remoter master
+First fetch the new master from the upstream repository, then rebase your work branch on that:
+```
+git fetch origin            # Updates origin/master
+git rebase origin/master    # Rebases current branch onto origin/master
+```
+
 ## Push 
 git push origin HEAD:refs/for/master  
 
