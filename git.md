@@ -30,7 +30,11 @@ git rebase origin/master    # Rebases current branch onto origin/master
 ```
 
 ## Push 
-git push origin HEAD:refs/for/master  
+```
+git push origin HEAD:refs/for/master   # gerrit
+git push -u origin feature # github first time
+git push origin feature # not first time
+```
 
 ## Checkout
 You need to create a local branch that tracks a remote branch. The following command will create a local branch named daves_branch, tracking the remote branch origin/daves_branch. When you push your changes the remote branch will be updated.
