@@ -10,6 +10,9 @@ git config --global core.editor "vim"
 ## Clone 
 git clone url 第一次初始化git
 
+## delete remote branch
+git push <remote_name> --delete <branch_name>
+
 ## Fetch  
 1. git remote -v : check remote repository  
 2. git fetch [remote repository_name] [branch_name]:tmp : checkout remote branch to local tmp branch      
