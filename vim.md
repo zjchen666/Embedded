@@ -3,10 +3,15 @@
 ### vundle :  
 install:  
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+
+Open VIM and execute below command:
 ```
 install plugin:  
 :PluginInstall
+```
 
+Create vimrc with below:
+```
 " 你在此设置运行时路径
 set rtp+=~/.vim/bundle/Vundle.vim
 
