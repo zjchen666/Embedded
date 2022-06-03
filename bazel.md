@@ -8,4 +8,5 @@ load a function from other bazel file:
 https://docs.bazel.build/versions/main/skylark/macros.html
 
 __package__.  
+define the rule of current package.    
 https://docs.bazel.build/versions/main/be/functions.html
