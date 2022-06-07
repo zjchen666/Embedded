@@ -10,3 +10,6 @@ https://docs.bazel.build/versions/main/skylark/macros.html
 __package__.  
 define the rule of current package.    
 https://docs.bazel.build/versions/main/be/functions.html
+
+__C++ rules__
+https://bazel.build/reference/be/c-cpp?hl=en
