@@ -15,3 +15,8 @@ __remove color code from text stream__
 ```
 sed -e 's/\x1b\[[0-9;]*m//g'
 ```
+
+__find_and_replace__
+```
+grep -rl "find_string" . | xargs sed -i 's/find_string/replace_string/g'
+```
