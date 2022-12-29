@@ -309,3 +309,7 @@ Z - equal/zero bits.
 N - Negtive.   
 V - overflow.   
 C - carry on.   
+
+## ARM SMCCC (SMC call convernsion)
+1. defined the OEN(owning entity number) and range only, fast call/yeilding call, and register usage.
+2. API is not defined. so the ATF need the SPD to support the SMC call from Secure payload.
