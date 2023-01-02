@@ -152,32 +152,32 @@ int buffer_read(void) {
 
 3. 读者写者问题
 ```cpp
-pthread_mutex_t mutex;
-pthread_mutex_t mutex_w;
+pthread_mutex_t mutex; // globle lock
+pthread_mutex_t mutex_r; // reader lock
 int reader_count = 0;
 
 void writer() {
-    pthread_mutex_lock(&mutex_w);
+    pthread_mutex_lock(&mutex);
     write();
-    pthread_mutex_unlock(&mutex_w);
+    pthread_mutex_unlock(&mutex);
 }
 
 void reader() {
-    pthread_mutex_lock(&mutex);
-    reader_count++;
-    if (reader_count == 1) {
-        pthread_mutex_lock(&mutex_w);
+    pthread_mutex_lock(&mutex_r);
+    if (reader_count == 0) {
+        pthread_mutex_lock(&mutex);
     }
-    pthread_mutex_unlock(&mutex);
+    reader_count++;
+    pthread_mutex_unlock(&mutex_r);
     
     read();
     
-    pthread_mutex_lock(&mutex);
+    pthread_mutex_lock(&mutex_r);
     reader_count--;
     if (reader_count == 0) {
-        pthread_mutex_unlock(&mutex_w);
+        pthread_mutex_unlock(&mutex);
     }
-    pthread_mutex_unlock(&mutex);
+    pthread_mutex_unlock(&mutex_r);
 }
 
 自旋锁(Spin lock)
