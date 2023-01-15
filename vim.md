@@ -86,6 +86,8 @@ This may be wanted after using :set ignorecase to make searches case insensitive
 ## cscope update database
 :!cscope -Rbq  
 :cs reset
+## macos create database
+:cscope -b 
 
 显示版本及默认vimrc配置文件加载路径:scriptnames
 
@@ -94,3 +96,6 @@ This may be wanted after using :set ignorecase to make searches case insensitive
 2. Move Up / Down to select the columns of text in the lines you want to comment.  
 3. Then hit Shift + i and type the text you want to insert.  
 4. Then hit Esc , wait 1 second and the inserted text will appear on every line.  
+
+
+
