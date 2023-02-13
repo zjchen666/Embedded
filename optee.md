@@ -29,6 +29,12 @@ $ sudo apt install python3-pyelftools
 $ sudo apt-get install build-essential python3-dev  
 $ pip install pycryptodomex  
 
+#### ubuntu 18
+ install https://gitlab.freedesktop.org/slirp/libslirp
+ 1. download release 4.2.0
+ 2. meson build
+ 3. sudo ninja -C build install
+ 
 $ repo init -u https://github.com/OP-TEE/manifest.git -m qemu_v8.xml -b master  
 $ repo sync  
 $ cd build  
