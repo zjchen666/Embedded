@@ -1,15 +1,11 @@
 
-## Installation:
-### vundle :  
-install:  
+## Install plugin with vundle :  
+
+### 1 Install Vundle:  
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
-Open VIM and execute below command:
-``` 
-:PluginInstall
-```
+### 2. add below into .vimrc:
 
-Create vimrc with below:
 ```
 " 你在此设置运行时路径
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -27,13 +23,17 @@ call vundle#end()
 
 " filetype off
 filetype plugin indent on
+```
 
+### 3. Open VIM and Execute below command:
+``` 
+:PluginInstall
 ```
 
 replace:
 :%s/pld_string/new_string/g
 
-### ctags on MacOS . 
+## ctags on MacOS . 
 #you need to get new ctags, i recommend homebrew but anything will work . 
 $ brew install ctags  
 
@@ -96,6 +96,3 @@ This may be wanted after using :set ignorecase to make searches case insensitive
 2. Move Up / Down to select the columns of text in the lines you want to comment.  
 3. Then hit Shift + i and type the text you want to insert.  
 4. Then hit Esc , wait 1 second and the inserted text will appear on every line.  
-
-
-
