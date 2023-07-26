@@ -20,3 +20,7 @@ __find_and_replace__
 ```
 grep -rl "find_string" . | xargs sed -i 's/find_string/replace_string/g'
 ```
+__find_file_name__
+```
+find . -type f -exec grep -l 'example' {} \;
+```
