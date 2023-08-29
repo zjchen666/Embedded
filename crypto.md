@@ -7,12 +7,20 @@ file: Binary data
 
 // encryption
 openssl enc -e -nopad -nosalt  -aes-128-cbc -K '2b7e151628aed2a6abf7158809cf4f3c'  -iv '000102030405060708090a0b0c0d0e0f'  -in ./data.bin -out ./out.bin
+```
 
+### text to binary conversion
+```
 /* convert text string into binary data */
 # xxd -r -p ./input.txt out.bin
 
 /* Conver binary file into hex string file */
  xxd -p test.in > test.txt
+```
+### HMAC command 
+```
+// the data file is binary file rather than text file
+openssl dgst  -sha256 -mac HMAC -macopt hexkey:9779d9120642797f1747025d5b22b7ac607cab08e1758f2f3a46c8be1e25c53b8c6a8f58ffefa176 ./data.bin
 ```
 
 ### check RSA pub key
