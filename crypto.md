@@ -11,6 +11,9 @@ openssl enc -e -nopad -nosalt  -aes-128-cbc -K '2b7e151628aed2a6abf7158809cf4f3c
 
 ### text to binary conversion
 ```
+$ cat ./data.txt 
+6bc1bee22e409f96e93d7e117393172a1a2b
+
 /* convert text string into binary data */
 # xxd -r -p ./input.txt out.bin
 
