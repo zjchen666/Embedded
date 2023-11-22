@@ -1,7 +1,8 @@
-## $@ $< $^
+## _$@ $< $^_
+```
 $@ is the name of the file being generated,
 and $< the first prerequisite (usually the source file). You can find a list of all these special variables in the GNU Make manual.
-
+```
 For example, consider the following declaration:
 
 ```cpp
