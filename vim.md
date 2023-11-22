@@ -61,6 +61,9 @@ file switch:
 ## show tab and space  
 set list listchars=tab:>-,trail:-  
 
+## change space to tab (for makefile)
+%s/^[ ]\+/\t/g
+
 ## 光标跳转  
 Ctrl + O
 Ctrl + I
