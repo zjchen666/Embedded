@@ -35,7 +35,10 @@ $(SPECIAL_OBJS): EXTRA_FLAGS := -std=c99   # Whatever extra flags you need
      $(CC) $(CFLAGS) $(EXTRA_FLAGS) -o $@ -c $<
 ```
 
-
+## source code in different folders
+```
+VPATH += dir1 dir2 ...
+```
 
 
 = 是最基本的赋值   
