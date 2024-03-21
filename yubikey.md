@@ -7,3 +7,14 @@ Default PIV unlock PIN: 12345678
 
 > passwd
 ```
+
+__export key from PC to yubikey__   
+
+```
+gpg2 --edit-key <Key ID>
+
+> keytocard
+> enter pgp key password
+> enter Admin PIN
+```
+
