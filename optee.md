@@ -114,3 +114,13 @@ PE, and returns when the requested operation has completed.
 • Yielding Calls start operations that can be pre-empted by a Non-secure interrupt. The call can return
 before the requested operation has completed. Appendix A: Example implementation of Yielding Service
 calls provides an example of handling Yielding Calls.  
+
+### Login Method
+This depends on the login method.
+TEE_LOGIN_PUBLIC: no UUID.
+TEE_LOGIN_USER: UUID is set by Linux kernel tee driver from effective user ID.
+TEE_LOGIN_GROUP: UUID is set by the CA and verified by Linux kernel tee driver against the groups the user belongs to.
+TEE_LOGIN_APPLICATION/TEE_LOGIN_APPLICATION_USER/TEE_LOGIN_APPLICATION_GROUP: not supported by OP-TEE.
+TEE_LOGIN_TRUSTED_APP: set by OP-TEE core from effective client TA UUID.
+TEE_LOGIN_REE_KERNEL (OP-TEE extension): no UUID.
+
