@@ -123,4 +123,4 @@ TEE_LOGIN_GROUP: UUID is set by the CA and verified by Linux kernel tee driver a
 TEE_LOGIN_APPLICATION/TEE_LOGIN_APPLICATION_USER/TEE_LOGIN_APPLICATION_GROUP: not supported by OP-TEE.
 TEE_LOGIN_TRUSTED_APP: set by OP-TEE core from effective client TA UUID.
 TEE_LOGIN_REE_KERNEL (OP-TEE extension): no UUID.
-
+https://github.com/OP-TEE/optee_os/issues/6444
