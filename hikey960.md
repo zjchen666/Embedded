@@ -12,4 +12,5 @@ $ ./device/linaro/hikey/fetch-vendor-package.sh
 ### Build target and build type
 ```
 $ list_products
+$ lunch hikey960_tv-ap4a-eng
 ```
