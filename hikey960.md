@@ -8,6 +8,10 @@ https://source.android.com/docs/setup/start/requirements
 ```
 $ ./device/linaro/hikey/fetch-vendor-package.sh
 ```
+### Install Platform Package
+```
+repo init --partial-clone -b main -u https://android.googlesource.com/platform/manifest
+```
 
 ### Build target and build type
 ```
